@@ -1,4 +1,4 @@
-# Leaf Light App | Plant Moisture Tracking
+# Leaflite App | Plant Moisture Tracking
 
 ## Prerequisites
 
