@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:leaflight/my_button.dart';
-import 'package:leaflight/my_textfield.dart';
+import 'package:leaflite/components/primary_button.dart';
+import 'package:leaflite/components/primary_textfield.dart';
 
 class SignUpPage extends StatelessWidget {
   SignUpPage({Key? key}) : super(key: key);
@@ -26,25 +26,25 @@ class SignUpPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                MyTextField(
+                PrimaryTextField(
                   controller: usernameController,
                   hintText: 'Username',
                   obscureText: false,
                 ),
                 SizedBox(height: 20),
-                MyTextField(
+                PrimaryTextField(
                   controller: emailController,
                   hintText: 'Email',
                   obscureText: false,
                 ),
                 SizedBox(height: 20),
-                MyTextField(
+                PrimaryTextField(
                   controller: passwordController,
                   hintText: 'Password',
                   obscureText: true,
                 ),
                 SizedBox(height: 20),
-                MyButton(
+                PrimaryButton(
                   onTap: signUpUser,
                   buttonText: 'Sign Up',
                 ),

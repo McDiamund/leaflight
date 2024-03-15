@@ -1,23 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(PlantListApp());
-}
-
-class PlantListApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Plant List',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: PlantListPage(),
-    );
-  }
-}
-
 class PlantListPage extends StatelessWidget {
   final List<String> plants = [
     'Rose',

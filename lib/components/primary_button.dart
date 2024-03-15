@@ -2,10 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class MyButton extends StatelessWidget {
+class PrimaryButton extends StatelessWidget {
   final Function()? onTap;
-  String? buttonText;
-  MyButton({super.key, required this.onTap, this.buttonText});
+  final String? buttonText;
+  const PrimaryButton({super.key, required this.onTap, this.buttonText});
 
   Widget build(BuildContext contex) {
     return GestureDetector(
