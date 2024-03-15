@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project1/componets/my_button.dart';
-import 'package:project1/componets/my_textfield.dart';
+import 'package:leaflight/my_button.dart';
+import 'package:leaflight/my_textfield.dart';
 
 class SignUpPage extends StatelessWidget {
   SignUpPage({Key? key}) : super(key: key);

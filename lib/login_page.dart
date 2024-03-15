@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project1/componets/my_button.dart';
-import 'package:project1/componets/my_textfield.dart';
-import 'package:project1/componets/square_tile.dart';
+import 'package:leaflight/my_button.dart';
+import 'package:leaflight/my_textfield.dart';
+import 'package:leaflight/square_tile.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
