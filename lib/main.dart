@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:leaflight/home/views/views.dart';
+import 'package:project1/login_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'LeafLight',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: HomePage(),
+      debugShowCheckedModeBanner: false,
+      home: LoginPage(),
     );
   }
 }
