@@ -13,15 +13,14 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 50),
-            Center(
+            const Center(
               child: Image(
-                image: AssetImage('lib/images/Vector.png'),
+                image: AssetImage('assets/logo.png'),
                 width: 100,
                 height: 100,
               ),
