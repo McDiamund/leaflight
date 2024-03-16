@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.grey[200],
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
