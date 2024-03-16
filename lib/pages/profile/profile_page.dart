@@ -63,10 +63,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-void main() {
-  runApp(MyApp());
-}
-
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
