@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:leaflite/components/primary_button.dart';
 import 'package:leaflite/components/primary_textfield.dart';
+import 'package:leaflite/pages/login/login.dart';
 
 class SignUpPage extends StatelessWidget {
   SignUpPage({Key? key}) : super(key: key);
@@ -15,41 +16,70 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
-      appBar: AppBar(
-        title: Text('Sign Up'),
-      ),
+      appBar: AppBar(),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                PrimaryTextField(
-                  controller: usernameController,
-                  hintText: 'Username',
-                  obscureText: false,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            children: [
+              const SizedBox(height: 50),
+              const Center(
+                child: Image(
+                  image: AssetImage('assets/logo.png'),
+                  width: 100,
+                  height: 100,
                 ),
-                SizedBox(height: 20),
-                PrimaryTextField(
-                  controller: emailController,
-                  hintText: 'Email',
-                  obscureText: false,
-                ),
-                SizedBox(height: 20),
-                PrimaryTextField(
-                  controller: passwordController,
-                  hintText: 'Password',
-                  obscureText: true,
-                ),
-                SizedBox(height: 20),
-                PrimaryButton(
-                  onTap: signUpUser,
-                  buttonText: 'Sign Up',
-                ),
-              ],
-            ),
+              ),
+              const Text('Create your Leaflite account', style: TextStyle(fontSize: 20),),
+              const SizedBox(height: 20),
+              PrimaryTextField(
+                controller: usernameController,
+                hintText: 'Username',
+                obscureText: false,
+              ),
+              const SizedBox(height: 15),
+              PrimaryTextField(
+                controller: passwordController,
+                hintText: 'Password',
+                obscureText: true,
+              ),
+              const SizedBox(height: 15),
+              PrimaryTextField(
+                controller: passwordController,
+                hintText: 'Confirm Password',
+                obscureText: true,
+              ),
+              const SizedBox(height: 15),
+              PrimaryButton(
+                onTap: signUpUser,
+                buttonText: "LOGIN",
+              ),
+              const SizedBox(height: 15),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Already have an account?',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  const SizedBox(width: 4),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage())
+                      );
+                    },
+                    child: Text(
+                      'Login',
+                      style: TextStyle(
+                          color: Colors.green[400], fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),

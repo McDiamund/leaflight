@@ -3,7 +3,7 @@ import 'package:leaflite/main.dart';
 import 'package:leaflite/pages/home/home.dart';
 import 'package:leaflite/pages/login/login.dart';
 import 'package:leaflite/pages/plant_list/views/plant_list_page.dart';
-import 'package:leaflite/pages/profile/profile_page.dart';
+import 'package:leaflite/pages/profile/views/profile_page.dart';
 import 'package:leaflite/pages/signup/signup.dart';
 
 class PageList extends StatelessWidget {
