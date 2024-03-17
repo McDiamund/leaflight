@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leaflite/pages/plant_details/views/plant_details_page.dart';
 
 class PlantListPage extends StatelessWidget {
   final List<String> plants = [
@@ -57,7 +58,11 @@ class PlantListPage extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, 
+                  MaterialPageRoute(builder: (context) => PlantDetailsPage())
+                );
+              },
               child: ListTile(
                 leading: Container(
                   width: 40,
@@ -80,7 +85,11 @@ class PlantListPage extends StatelessWidget {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, 
+                  MaterialPageRoute(builder: (context) => PlantDetailsPage())
+                );
+              },
               child: ListTile(
                 leading: Container(
                   width: 40,

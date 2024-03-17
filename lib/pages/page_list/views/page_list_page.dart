@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:leaflite/main.dart';
 import 'package:leaflite/pages/home/home.dart';
 import 'package:leaflite/pages/login/login.dart';
+import 'package:leaflite/pages/plant_details/views/plant_details_page.dart';
 import 'package:leaflite/pages/plant_list/views/plant_list_page.dart';
 import 'package:leaflite/pages/profile/views/profile_page.dart';
 import 'package:leaflite/pages/signup/signup.dart';
@@ -81,7 +82,7 @@ class PageList extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PlantListPage()),
+                    MaterialPageRoute(builder: (context) => PlantDetailsPage()),
                   );
                 },
                 child: Text('Plant Details Page')
