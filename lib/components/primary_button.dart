@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 class PrimaryButton extends StatelessWidget {
   final Function()? onTap;
   final String? buttonText;
-  const PrimaryButton({super.key, required this.onTap, this.buttonText});
+  final Color?  color;
+  const PrimaryButton({super.key, required this.onTap, this.buttonText, this.color});
 
   Widget build(BuildContext contex) {
     return GestureDetector(
@@ -13,7 +14,7 @@ class PrimaryButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: color ?? Colors.black,
           borderRadius: BorderRadius.circular(5),
         ),
         child: Center(

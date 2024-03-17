@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leaflite/pages/add_device/add_device.dart';
 import 'package:leaflite/pages/plant_details/views/plant_details_page.dart';
 
 class PlantListPage extends StatelessWidget {
@@ -7,24 +8,6 @@ class PlantListPage extends StatelessWidget {
     'Lily',
     'Tulip',
     'Orchid',
-    'Sunflower',
-    'Cactus',
-    'Fern',
-    'Bamboo',
-    'Daisy',
-    'Carnation',
-    'Lavender',
-    'Hydrangea',
-    'Peony',
-    'Poinsettia',
-    'Marigold',
-    'Daffodil',
-    'Iris',
-    'Chrysanthemum',
-    'Aloe Vera',
-    'Jasmine',
-    'Holly',
-    'Geranium',
   ];
 
   @override
@@ -48,9 +31,19 @@ class PlantListPage extends StatelessWidget {
                   ),
                   const Spacer(),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (context) => ScanDevicesPage()
+                        )
+                      );
+                    },
                     child: const Row(
-                      children: [Icon(Icons.add), Text('Add a new plant')],
+                      children: [
+                        Icon(Icons.add), 
+                        Text('Add a new plant')
+                      ],
                     ),
                   ),
                 ],
