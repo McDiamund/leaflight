@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:leaflite/pages/page_list/views/page_list_page.dart';
+import 'package:leaflite/navigation/navigation_provider.dart';
+import 'package:leaflite/pages/home/home.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,12 +12,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Color.fromARGB(255, 55, 129, 57),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => NavigationProvider())
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: Color.fromARGB(255, 55, 129, 57),
+        ),
+        home: HomePage(),
       ),
-      home: PageList(),
     );
   }
 }

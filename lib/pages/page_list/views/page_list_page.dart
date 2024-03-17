@@ -47,7 +47,7 @@ class PageList extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Profile()),
+                    MaterialPageRoute(builder: (context) => ProfilePage()),
                   );
                 },
                 child: Text('Profile Page')

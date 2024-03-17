@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:leaflite/pages/add_device/add_device.dart';
 import 'package:leaflite/pages/plant_details/views/plant_details_page.dart';
@@ -60,7 +62,12 @@ class PlantListPage extends StatelessWidget {
                 leading: Container(
                   width: 40,
                   height: 40,
-                  color: Colors.red,
+                  color: Color.fromRGBO(
+                    Random().nextInt(256), // Random red value
+                    Random().nextInt(256), // Random green value
+                    Random().nextInt(256), // Random blue value
+                    1, // Alpha value (1 is fully opaque)
+                  )
                 ),
                 title: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,7 +94,12 @@ class PlantListPage extends StatelessWidget {
                 leading: Container(
                   width: 40,
                   height: 40,
-                  color: Colors.red,
+                  color: Color.fromRGBO(
+                    Random().nextInt(256), // Random red value
+                    Random().nextInt(256), // Random green value
+                    Random().nextInt(256), // Random blue value
+                    1, // Alpha value (1 is fully opaque)
+                  )
                 ),
                 title: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
