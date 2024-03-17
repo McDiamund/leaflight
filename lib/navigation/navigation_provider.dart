@@ -15,7 +15,9 @@ class NavigationProvider extends ChangeNotifier {
   }
 
   final List<Widget> _screens = [
-    Scaffold(),
+    Scaffold(
+      body: Center(child: Text('Coming Soon...'),),
+    ),
     PlantListPage(),
     ProfilePage()
   ];

@@ -95,19 +95,7 @@ class PageList extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ScanDevicesPage()),
-                  );
-                },
-                child: Text('Scan Devices Page')
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => DeviceListPage()),
+                    MaterialPageRoute(builder: (context) => DeviceSetupPage()),
                   );
                 },
                 child: Text('Device List Page')

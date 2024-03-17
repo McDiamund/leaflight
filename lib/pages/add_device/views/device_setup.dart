@@ -9,9 +9,20 @@ class DeviceSetupPage extends StatefulWidget {
 }
 
 class _DeviceSetupPageState extends State<DeviceSetupPage> {
-  TextEditingController nameController = TextEditingController();
+  List<TextEditingController> controllers = List.generate(
+    4,
+    (index) => TextEditingController(),
+  );
 
   setupDevice() {}
+
+  @override
+  void dispose() {
+    for (var controller in controllers) {
+      controller.dispose();
+    }
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,13 +55,34 @@ class _DeviceSetupPageState extends State<DeviceSetupPage> {
           Column(
             children: [
               const Icon(Icons.devices_outlined, size: 90,),
-              const Text('Setup your leaflite device', style: TextStyle(fontSize: 20)),
+              const Text('Enter the code of your Leaflite device', style: TextStyle(fontSize: 20)),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20, top: 20, bottom: 10),
-                child: PrimaryTextField(
-                  controller: nameController, 
-                  hintText: 'name', 
-                  obscureText: false
+                padding: const EdgeInsets.symmetric(vertical: 30.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                    controllers.length,
+                    (index) => Container(
+                      width: 50.0,
+                      margin: EdgeInsets.symmetric(horizontal: 5.0),
+                      child: TextField(
+                        controller: controllers[index],
+                        textAlign: TextAlign.center,
+                        keyboardType: TextInputType.number,
+                        maxLength: 2,
+                        onChanged: (value) {
+                          if (value.length == 1 && index < controllers.length - 1) {
+                            FocusScope.of(context).nextFocus();
+                          } else if (value.isEmpty && index > 0) {
+                            FocusScope.of(context).previousFocus();
+                          }
+                        },
+                        decoration: const InputDecoration(
+                          counterText: "",
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
               Padding(

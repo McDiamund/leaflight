@@ -37,7 +37,7 @@ class PlantListPage extends StatelessWidget {
                       Navigator.push(
                         context, 
                         MaterialPageRoute(
-                          builder: (context) => ScanDevicesPage()
+                          builder: (context) => DeviceSetupPage()
                         )
                       );
                     },
