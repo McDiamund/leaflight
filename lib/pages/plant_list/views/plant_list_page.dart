@@ -24,120 +24,83 @@ class PlantListPage extends StatelessWidget {
     'Jasmine',
     'Holly',
     'Geranium',
-    'Begonia',
-    'Azalea',
-    'Violet',
-    'Morning Glory',
-    'Snapdragon',
-    'Zinnia',
-    'Fuchsia',
-    'Honeysuckle',
-    'Petunia',
-    'Bleeding Heart',
-    'Bougainvillea',
-    'Foxglove',
-    'Dandelion',
-    'Cosmos',
-    'Lupine',
-    'Baby\'s Breath',
-    'Forget-Me-Not',
-    'Hosta',
-    'Columbine',
-    'Calla Lily',
-    'Bird of Paradise',
-    'Gladiolus',
-    'Hollyhock',
-    'Gerbera Daisy',
-    'Freesia',
-    'Ginger',
-    'Eucalyptus',
-    'Echinacea',
-    'Delphinium',
-    'Crocus',
-    'Dianthus',
-    'Celosia',
-    'Caladium',
-    'Begonia',
-    'Anemone',
-    'Anthurium',
-    'Baby Blue Eyes',
-    'Balloon Flower',
-    'Butterfly Bush',
-    'Camellia',
-    'Coreopsis',
-    'Coneflower',
-    'Dahlia',
-    'Dusty Miller',
-    'Elephant Ear',
-    'Fritillaria',
-    'Gazania',
-    'Hellebore',
-    'Impatiens',
-    'Kiwi',
-    'Lantana',
-    'Lemon Balm',
-    'Lobelia',
-    'Mimosa',
-    'Nasturtium',
-    'Oregano',
-    'Pansy',
-    'Passionflower',
-    'Queen Anne\'s Lace',
-    'Ranunculus',
-    'Saffron',
-    'Sage',
-    'Salvia',
-    'Sedum',
-    'Speedwell',
-    'Starflower',
-    'Sweet Pea',
-    'Thyme',
-    'Verbena',
-    'Veronica',
-    'Viola',
-    'Wallflower',
-    'Yarrow',
-    'Yucca',
-    'Zephyranthes',
-    'Zucchini',
-    'Water Lily',
-    'Weeping Willow'
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Plant List',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: Colors.blueGrey,
-        centerTitle: true,
-      ),
-      backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'List of Plant Names:',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              padding: EdgeInsets.only(right: 15.0, left: 5, top: 5),
+              child: Row(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Image(
+                      image: AssetImage('assets/logo.png'),
+                      width: 30,
+                      height: 30,
+                    ),
+                  ),
+                  const Spacer(),
+                  InkWell(
+                    onTap: () {},
+                    child: const Row(
+                      children: [Icon(Icons.add), Text('Add a new plant')],
+                    ),
+                  ),
+                ],
               ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: List.generate(plants.length, (index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Text(
-                    '${index + 1}. ${plants[index]}',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                );
-              }),
+            const SizedBox(height: 15),
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                leading: Container(
+                  width: 40,
+                  height: 40,
+                  color: Colors.red,
+                ),
+                title: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Acoma Crape Myrtle', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                    Row(
+                      children: [
+                        Text('Moisture:'),
+                        Text(' 10%')
+                      ],
+                    )
+                  ],
+                ),
+                trailing: Icon(Icons.arrow_forward_ios_outlined),
+              ),
+            ),
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                leading: Container(
+                  width: 40,
+                  height: 40,
+                  color: Colors.red,
+                ),
+                title: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Acoma Crape Myrtle', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                    Row(
+                      children: [
+                        Text('Moisture:'),
+                        Text(' 10%')
+                      ],
+                    )
+                  ],
+                ),
+                trailing: Icon(Icons.arrow_forward_ios_outlined),
+              ),
             ),
           ],
         ),

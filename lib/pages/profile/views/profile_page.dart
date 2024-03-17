@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:leaflite/components/primary_button.dart';
 import 'package:leaflite/components/primary_textfield.dart';
 
@@ -13,46 +14,68 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
       appBar: AppBar(
         title: Text('Profile'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                PrimaryTextField(
-                  controller: nameController,
-                  hintText: 'Name',
-                  obscureText: false,
-                ),
-                SizedBox(height: 20),
-                PrimaryTextField(
-                  controller: emailController,
-                  hintText: 'Email',
-                  obscureText: false,
-                ),
-                SizedBox(height: 20),
-                PrimaryButton(
-                  onTap: profile,
-                  buttonText: 'Create Profile',
-                ),
-                const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Sign Out',
-                        style: TextStyle(color: Colors.grey[600]),
-                      ),
-                    ],
+                const SizedBox(height: 30),
+                Center(
+                  child: Container(
+                    height: 150,
+                    width: 150,
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(150)
+                    ),
                   ),
                 ),
+                const SizedBox(height: 20),
+                const Text('Elias Treadway', style: TextStyle(fontSize: 20)),
+                const Text('eliastreadwayofficial@gmail.com'),
+                const SizedBox(height: 30),
+                InkWell(
+                  onTap: () {
+                    
+                  },
+                  child: ListTile(
+                    leading: Container(
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 209, 209, 209),
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(Icons.settings),
+                      ),
+                    ),
+                    title: Text('Settings'),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    
+                  },
+                  child: ListTile(
+                    leading: Container(
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 209, 209, 209),
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(Icons.logout),
+                      ),
+                    ),
+                    title: Text('Logout', style: TextStyle(color: Colors.red),),
+                  ),
+                ),
+
               ],
             ),
           ),
