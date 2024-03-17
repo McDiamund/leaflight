@@ -75,6 +75,18 @@ class PageList extends StatelessWidget {
                 child: Text('Plant List Page')
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PlantListPage()),
+                  );
+                },
+                child: Text('Plant Details Page')
+              ),
+            ),
           ],
         ),
       ),
