@@ -1,5 +1,8 @@
 # Leaflite App | Plant Moisture Tracking
 
+Presentation
+https://www.loom.com/share/c70ff851e8d6421ca25cc1bfca7498a9?sid=56aa029d-98ed-45fc-8560-98af8263ec3b
+
 ## Prerequisites
 
 Before getting started, you'll need to make sure you have the following installed:
