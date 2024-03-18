@@ -14,7 +14,9 @@ class _DeviceSetupPageState extends State<DeviceSetupPage> {
     (index) => TextEditingController(),
   );
 
-  setupDevice() {}
+  setupDevice() {
+    
+  }
 
   @override
   void dispose() {

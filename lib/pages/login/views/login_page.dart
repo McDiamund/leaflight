@@ -23,65 +23,65 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final authProvider = Provider.of<AuthProvider>(context);
     final userProvider = Provider.of<UserProvider>(context);
-    
+
     void submitForm() async {
-        final email = emailController.text.trim();
-        final password = passwordController.text.trim();
+      final email = emailController.text.trim();
+      final password = passwordController.text.trim();
 
-        if (email.isEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-            content: Text('Please Enter Email'),
-          ));
+      if (email.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Please Enter Email'),
+        ));
 
-          return;
-        }
-
-        if (password.isEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-            content: Text('Please Enter Password'),
-          ));
-
-          return;
-        }
-
-        try {
-          setState(() {
-            isLoading = true;
-          });
-
-          final user = await UserService.signin(email, password);
-
-          if (user.id != null) {
-            await userProvider.setUser(user);
-
-            // // Login successful, update the UI
-            await authProvider.loginUser();
-          }
-
-          setState(() {
-            isLoading = false;
-          });
-
-          return;
-        } catch (e) {
-          showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              content: Text(e.toString()),
-              actions: [
-                TextButton(
-                  child: const Text('OK'),
-                  onPressed: () => Navigator.pop(context),
-                ),
-              ],
-            ),
-          );
-
-          setState(() {
-            isLoading = false;
-          });
-        }
+        return;
       }
+
+      if (password.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Please Enter Password'),
+        ));
+
+        return;
+      }
+
+      try {
+        setState(() {
+          isLoading = true;
+        });
+
+        final user = await UserService.signin(email, password);
+
+        if (user.id != null) {
+          await userProvider.setUser(user);
+
+          // // Login successful, update the UI
+          await authProvider.loginUser();
+        }
+
+        setState(() {
+          isLoading = false;
+        });
+
+        return;
+      } catch (e) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            content: Text(e.toString()),
+            actions: [
+              TextButton(
+                child: const Text('OK'),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ],
+          ),
+        );
+
+        setState(() {
+          isLoading = false;
+        });
+      }
+    }
 
     return Stack(
       children: [
@@ -100,7 +100,10 @@ class _LoginPageState extends State<LoginPage> {
                       height: 100,
                     ),
                   ),
-                  const Text('Welcome to Leaflite', style: TextStyle(fontSize: 20),),
+                  const Text(
+                    'Welcome to Leaflite',
+                    style: TextStyle(fontSize: 20),
+                  ),
                   const SizedBox(height: 20),
                   PrimaryTextField(
                     controller: emailController,
@@ -130,15 +133,15 @@ class _LoginPageState extends State<LoginPage> {
                       InkWell(
                         onTap: () {
                           Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SignUpPage())
-                          );
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignUpPage()));
                         },
                         child: Text(
                           'Sign up',
                           style: TextStyle(
-                              color: Colors.green[400], fontWeight: FontWeight.bold),
+                              color: Colors.green[400],
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
@@ -149,17 +152,13 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
         if (isLoading) ...[
-                Center(
-                  child: 
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
-                    color: Color.fromRGBO(72, 72, 72, 0.498),
-                    child: Center(child: CircularProgressIndicator())
-
-                  )
-                )
-              ]
+          Center(
+              child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  color: Color.fromRGBO(72, 72, 72, 0.498),
+                  child: Center(child: CircularProgressIndicator())))
+        ]
       ],
     );
   }
