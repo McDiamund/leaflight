@@ -14,109 +14,111 @@ class PlantListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(right: 15.0, left: 5, top: 5),
-              child: Row(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Image(
-                      image: AssetImage('assets/logo.png'),
-                      width: 30,
-                      height: 30,
-                    ),
-                  ),
-                  const Spacer(),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (context) => DeviceSetupPage()
-                        )
-                      );
-                    },
-                    child: const Row(
-                      children: [
-                        Icon(Icons.add), 
-                        Text('Add a new plant')
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 15),
-            InkWell(
-              onTap: () {
-                Navigator.push(context, 
-                  MaterialPageRoute(builder: (context) => PlantDetailsPage())
-                );
-              },
-              child: ListTile(
-                leading: Container(
-                  width: 40,
-                  height: 40,
-                  color: Color.fromRGBO(
-                    Random().nextInt(256), // Random red value
-                    Random().nextInt(256), // Random green value
-                    Random().nextInt(256), // Random blue value
-                    1, // Alpha value (1 is fully opaque)
-                  )
-                ),
-                title: const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(right: 15.0, left: 5, top: 5),
+                child: Row(
                   children: [
-                    Text('Acoma Crape Myrtle', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
-                    Row(
-                      children: [
-                        Text('Moisture:'),
-                        Text(' 10%')
-                      ],
-                    )
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Image(
+                        image: AssetImage('assets/logo.png'),
+                        width: 30,
+                        height: 30,
+                      ),
+                    ),
+                    const Spacer(),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context, 
+                          MaterialPageRoute(
+                            builder: (context) => DeviceSetupPage()
+                          )
+                        );
+                      },
+                      child: const Row(
+                        children: [
+                          Icon(Icons.add), 
+                          Text('Add a new plant')
+                        ],
+                      ),
+                    ),
                   ],
                 ),
-                trailing: Icon(Icons.arrow_forward_ios_outlined),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(context, 
-                  MaterialPageRoute(builder: (context) => PlantDetailsPage())
-                );
-              },
-              child: ListTile(
-                leading: Container(
-                  width: 40,
-                  height: 40,
-                  color: Color.fromRGBO(
-                    Random().nextInt(256), // Random red value
-                    Random().nextInt(256), // Random green value
-                    Random().nextInt(256), // Random blue value
-                    1, // Alpha value (1 is fully opaque)
-                  )
-                ),
-                title: const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Acoma Crape Myrtle', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
-                    Row(
-                      children: [
-                        Text('Moisture:'),
-                        Text(' 10%')
-                      ],
+              const SizedBox(height: 15),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, 
+                    MaterialPageRoute(builder: (context) => PlantDetailsPage())
+                  );
+                },
+                child: ListTile(
+                  leading: Container(
+                    width: 40,
+                    height: 40,
+                    color: Color.fromRGBO(
+                      Random().nextInt(256), // Random red value
+                      Random().nextInt(256), // Random green value
+                      Random().nextInt(256), // Random blue value
+                      1, // Alpha value (1 is fully opaque)
                     )
-                  ],
+                  ),
+                  title: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Acoma Crape Myrtle', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                      Row(
+                        children: [
+                          Text('Moisture:'),
+                          Text(' 10%')
+                        ],
+                      )
+                    ],
+                  ),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
                 ),
-                trailing: Icon(Icons.arrow_forward_ios_outlined),
               ),
-            ),
-          ],
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, 
+                    MaterialPageRoute(builder: (context) => PlantDetailsPage())
+                  );
+                },
+                child: ListTile(
+                  leading: Container(
+                    width: 40,
+                    height: 40,
+                    color: Color.fromRGBO(
+                      Random().nextInt(256), // Random red value
+                      Random().nextInt(256), // Random green value
+                      Random().nextInt(256), // Random blue value
+                      1, // Alpha value (1 is fully opaque)
+                    )
+                  ),
+                  title: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Acoma Crape Myrtle', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                      Row(
+                        children: [
+                          Text('Moisture:'),
+                          Text(' 10%')
+                        ],
+                      )
+                    ],
+                  ),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

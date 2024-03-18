@@ -49,14 +49,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.6"
-  dart_ping:
-    dependency: transitive
-    description:
-      name: dart_ping
-      sha256: "623cce963c66643cb26661187651a1c69ec09ac3a8bae3a17717aed0e17c0054"
-      url: "https://pub.dev"
-    source: hosted
-    version: "7.0.2"
   fake_async:
     dependency: transitive
     description:
@@ -144,14 +136,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
-  line_awesome_flutter:
-    dependency: "direct main"
-    description:
-      name: line_awesome_flutter
-      sha256: "7e1beb342895d7da40d40047d193f8ecfd494355b399dc3d92912c31ccc4d808"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0"
   lints:
     dependency: transitive
     description:
@@ -184,27 +168,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.11.0"
-  multicast_dns:
-    dependency: "direct main"
-    description:
-      name: multicast_dns
-      sha256: "316cc47a958d4bd3c67bd238fe8b44fdfb6133bad89cb191c0c3bd3edb14e296"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.2+6"
   nested:
     dependency: transitive
     description:
       name: nested
       sha256: "03bac4c528c64c95c722ec99280375a6f2fc708eec17c7b3f07253b626cd2a20"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
-  network_discovery:
-    dependency: "direct main"
-    description:
-      name: network_discovery
-      sha256: c9369dd1a31c0b7132a4cbca3ee91fb5b314159e1b072a689ef991a79f1e4ee3
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"

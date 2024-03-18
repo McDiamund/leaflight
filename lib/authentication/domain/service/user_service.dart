@@ -8,15 +8,15 @@ class UserService {
     final response = await AuthService.signin(username, password);
     final data = await jsonDecode(response);
 
-    if (data['message'] != null && data['status'] != 200) {
+    if (data['message'] != null) {
       throw Exception(data['message']);
     }
 
     User userData = User(
-      id: data['id'],
-      login_key: data['login_key'],
-      email: data['email'],
-      created_at: data['created_at']
+      id: data['user']['id'],
+      login_key: data['user']['login_key'],
+      email: data['user']['email'],
+      created_at: data['user']['created_at']
     );
 
     return userData;
