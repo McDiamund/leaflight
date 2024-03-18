@@ -72,7 +72,7 @@ class _DeviceSetupPageState extends State<DeviceSetupPage> {
                           controller: controllers[index],
                           textAlign: TextAlign.center,
                           keyboardType: TextInputType.number,
-                          maxLength: 2,
+                          maxLength: 1,
                           onChanged: (value) {
                             if (value.length == 1 && index < controllers.length - 1) {
                               FocusScope.of(context).nextFocus();
